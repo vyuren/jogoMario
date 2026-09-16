@@ -1,6 +1,11 @@
 const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
 const coin = document.querySelector(".coin");
+
+const gameOver = document.querySelector(".game-over");
+const restartButton = document.querySelector(".restart-button");
+const finalScore = document.querySelector(".final-score");
+
 let score = 0;
 
 const jump = () => {
@@ -46,7 +51,13 @@ const loop = setInterval(() => {
     mario.style.marginLeft = "50px";
 
     clearInterval(loop);
+
+    gameOver.style.display = "flex";
+    finalScore.innerHTML = score;
   }
 }, 10);
 
 document.addEventListener("keydown", jump);
+restartButton.addEventListener("click", () => {
+  location.reload();
+});
