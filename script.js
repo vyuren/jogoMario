@@ -58,6 +58,7 @@ const loop = setInterval(() => {
 }, 10);
 
 document.addEventListener("keydown", jump);
+document.addEventListener("pointerdown", jump);
 restartButton.addEventListener("click", () => {
   location.reload();
 });
